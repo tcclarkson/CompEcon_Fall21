@@ -1,0 +1,69 @@
+\documentclass[11pt]{article}
+
+\usepackage[doublespacing]{setspace}
+\usepackage{amsfonts,amsmath,amssymb, amsthm, color, graphicx,graphics,verbatim}
+\usepackage{apacite}
+\usepackage[left=2cm,textheight=9in,right=2cm]{geometry}
+\usepackage{bm}
+\usepackage{url}
+\usepackage[
+singlelinecheck=false % <-- important
+]{caption}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{natbib}
+%\usepackage{harvard}\\
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tablefootnote}
+\usepackage{dcolumn,booktabs}
+\usepackage{bm}
+\usepackage{float}
+\usepackage{titlesec}
+\graphicspath{{./images/}}
+\titleformat{\section}{\bfseries}{\thesection.}{1em}{}
+\titlespacing{\section}{0pt}{12pt}{6pt}
+\titleformat{\subsection}{\bfseries}{\thesubsection.}{1em}{}
+\titlespacing{\subsection}{0pt}{12pt}{6pt}
+\setcounter{secnumdepth}{4}
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+\newcolumntype{d}[1]{D..{#1}} % define a "decimal" column type
+\newcommand\mc[1]{\multicolumn{1}{c}{#1}} % a handy shortcut macro
+%\setlength\parindent{0pt} % just for this example
+\begin{document}
+\newpage
+\begin{center}
+	\textbf{Problem Set 7 Response} 
+	
+	Campbell Clarkson
+\end{center}
+
+\section{Context: Indian Agricultural Markets}\label{section1}
+
+\noindent India heavily regulates many agricultural crops and the sale of these crops in agricultural marketplaces, many times called \textit{mandis}. Many crops that are relied on at commercial scale, such as soybean or cotton, are given a price floor set by government regulators where the government will purchase the crops at a `minimum support price' (MSP). Other crops in more rural states, such as Uttar Pradesh, do not have this same benefit. When farmers produce potatos, for example, they must rely on sales to agricultural wholesalers at whatever price the mandi dictates at that time. Because states like Uttar Pradesh are quite rural, information exchange may be quite low without the introduction of information technology to aid farmers' decision making. For this reason, I create an economic model for the farmer's maximization of profit with a perishable crop that does not have an MSP eliminating uncertainty.
+
+To do this, I begin by creating a situation and making several assumptions. There exists a farmer (he) that produces a highly perishable crop to sell at market during the harvest season. For the sake of this situation, I assume three time periods, $t = 1$, $t = 2$, and $t = 3$. The farmer must sell his crop during periods $1$ and $2$, otherwise the value of those goods will be eliminated in period $3$. In order to ensure the quantity is sold, the farmer can discount the price of his crop. The probability of the entire crop being sold relies on a) the price, and b) the state of the particular market, \textit{m}. Given the rise of information communications technologies (ICTs) in the developing world, it would be reasonable to assume that there would marketplaces give high information about transactions to reduce uncertainty. For this reason, I assume no uncertainty or different states initially. I begin analyzing the problem with the preferences for the two states of market. The preferences for our farmer can be described in the profit function of sales (quantity sold as $r$) $\pi(r_1) + \beta\pi(r_2)$, where $\pi$ is the profit and $\beta$ represents the discount applied in period 2 to ensure sales. We can assume that $q > 0$ (the farmer knows he cannot increase his amount of crops he has to sell in the second period) and that the storage technology, $q_2 = q_1 - r_1$, shows that the amount of available goods in period 2 is subject to the leftover goods not sold in period 1. All goods not sold during two periods will be represented by $q_3 = q_2 - r_2$. After substituting $q_2$, we have two constraints, ($q_1 - r_1 - r_2 - q_3$) and $q_3\geq0$. We can show the Lagrangian for this problem as:
+
+\begin{equation}\label{lagrangian}
+	L = max_{r_1,r_2,q_3}\pi(r_1) + \beta\pi(r_2) + \lambda(q_1 - r_1 - r_2 - q_3) + \phi(q_3)
+\end{equation}
+
+however, because of the perishability of goods in period 3, we are left with $q_3 = 0$, so we can actually simplify our equation from equation \ref{lagrangian}.
+
+We can set up a Bellman equation, where $r_1 + r_2 = q_1$ and $q_1 - r_1 = l$ ($l$ = leftover goods). Given that all remaining goods in period $2$ must be sold, $l = q_2$. We maximize value using the following problem:
+
+\begin{equation}\label{bellman}
+	V_2(q_1) = max_{w_1\geq{}s\geq{}0}\pi(q_1 - l) + \beta\pi(l),
+\end{equation}
+
+where our first order condition makes ensures that $\pi'(q_1 - l) = \beta\pi'(l)$. and we maximize $V_2$ in the Bellman of equation \ref{bellman}, given we know how the farmer optimizes from the policy function of leftover goods from $l(q_1)$.
+
+\end{document}
